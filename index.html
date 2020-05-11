@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="/style.css">
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js" ></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" ></script>
+    <script src="/script.js" type="text/babel"></script>
   </head>  
   <body>
     <div id="app">Your app here</div>
@@ -20,7 +21,7 @@
           to make it easier for folks to view source and remix -->
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
-    <script>
+    <script type="text/babel">
       const app = document.getElementById('app');
       // Render một danh sách todo sử dụng ul, li React elements bao gồm các todo trong array sau
       const todos = [
@@ -29,9 +30,13 @@
         'Make dinner'
       ];
       const todoElements = todos.map(element => {
-        return React.createElement('li', null, element);
+        return <li>{element}</li>;
       })
-      const todoList = React.createElement('ul', null, ...todoElements);
+      const todoList = (
+        <ul>
+          {todoElements}
+        </ul>
+      );
       ReactDOM.render(todoList, app);
     </script>
   </body>
