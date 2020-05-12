@@ -1,0 +1,64 @@
+.login-form {
+  text-align: center;
+}
+.login-form .login-form-title {
+  font-weight: 500;
+  font-size: 80px;
+  color: #000;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+.login-form .login-form-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form .login-form-form .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.login-form .login-form-form .form-group label {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.login-form .login-form-form .form-group .input {
+  width: 514px;
+  height: 83px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding-top: 41px;
+  padding-left: 15px;
+}
+.login-form .login-form-form .form-submit {
+  width: 514px;
+  height: 83px;
+  border: none;
+  color: whitesmoke;
+  background-color: #00be61;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.login-form .login-form-form .checkbox-group {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.forgot-selector {
+  margin: 20px 0;
+  text-align: center;
+}
+.forgot-selector .forgot-selector-item {
+  font-size: 24px;
+  font-weight: 500;
+  color: black;
+  margin: 0 10px;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+}
