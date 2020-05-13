@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TabMenu from './Components/TabMenu.js';
+import Header from './Components/Header';
+import LoginForm from './Components/LoginForm';
 
 const instanceElements = [
   {
@@ -46,6 +48,8 @@ class App extends Component {
     return (
       <div className="App">
         <TabMenu instance={instanceElements}/>
+        <Header />
+        <LoginForm email="abc@example.com" />
       </div>
     );
   }
