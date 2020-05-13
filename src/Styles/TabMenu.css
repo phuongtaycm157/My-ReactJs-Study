@@ -1,0 +1,28 @@
+.tab-menu {
+  display: flex;
+}
+.tab-menu .option {
+  display: block;
+  flex-grow: 1;
+  text-decoration: none;
+  color: #8e8e8e;
+  background-color: #eee;
+  font-size: 18px;
+  align-items: center;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  box-sizing: border-box;
+  transition: .3s;
+}
+.tab-menu .option i {
+  display: block;
+  font-size: 48px;
+  margin-bottom: 5px;
+}
+.tab-menu .active,
+.tab-menu .option:hover {
+  border-top: 2px solid #8CDC52;
+  box-shadow: 0 2px 3px #aeaeae;
+  color: #8CDC52;
+  background-color: #fff;
+}
