@@ -1,5 +1,6 @@
 .tab-menu {
   display: flex;
+  margin-bottom: 10px;
 }
 .tab-menu .option {
   display: block;
