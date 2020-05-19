@@ -1,0 +1,62 @@
+.recommended-friends {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+.recommended-friends .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.recommended-friends .title div {
+  color: #999;
+  font-size: 14px;
+  font-weight: 500;
+}
+.recommended-friends .title a {
+  text-decoration: none;
+  color: #262626;
+  font-size: 12px;
+}
+.recommended-friends .title a:hover {
+  color: #565656;
+  transition: .3s;
+}
+.recommended-friends .follow-friend {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.recommended-friends .follow-friend .avatar{
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+.recommended-friends .follow-friend .info {
+  flex-grow: 1;
+  text-align: start;
+  font-size: 14px;
+}
+.recommended-friends .follow-friend .info div:last-child  {
+  color: #888;
+  font-size: 12px;
+}
+.recommended-friends .follow-friend a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #1876F2;
+  margin-right: 5px;
+  transition: .3s;
+}
+.recommended-friends .follow-friend a:hover {
+  color: #5198f6;
+}
