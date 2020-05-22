@@ -6,7 +6,8 @@ class SearchBox extends React.Component {
     constructor() {
         super();
         this.state = {
-            isFocused: false
+            isFocused: false,
+          overLength: false
         }
     }
 
@@ -18,6 +19,21 @@ class SearchBox extends React.Component {
             this.setState({isFocused: !isFocused});
         }
     }
+  
+  changeStateOverLength (length) {
+        const { overLength } = this.state;
+        if (length > 10) {
+            this.setState({overLength: true});
+        } else {
+            this.setState({overLength: false});
+        }
+    }
+
+    checkOverLength (id, cb) {
+        const input = document.getElementById(id);
+        // console.log(input.value);
+        cb(input.value.length);
+    }
 
     render() {
         const { isFocused } = this.state;
@@ -27,7 +43,10 @@ class SearchBox extends React.Component {
                 <input 
                     onFocus={this.changeState.bind(this)} 
                     onBlur={this.changeState.bind(this)} 
-                    type="text" className="search-input" 
+                  onKeyUp={this.checkOverLength.bind(null,'input', this.changeStateOverLength.bind(this))}
+                    id="input"
+                    type="text" 
+                  className={classnames('search-input', {'border-red': this.state.overLength})}
                     placeholder="Type something to search ..." 
                 />
                 <div className={
