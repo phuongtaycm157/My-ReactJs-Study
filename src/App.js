@@ -1,48 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Modal from './components/Modal';
 
+import './App.css';
+import FollowUserListItem from './components/FollowUserListItem';
+
+const userList = [
+  {name: 'Phong0908', avatarUrl: 'https://cdn.glitch.com/d408507d-49c6-4771-ad43-408bf2b66c1a%2Favatar.jpg?v=1590485011175'},
+  {name: 'Phong0908', avatarUrl: 'https://cdn.glitch.com/d408507d-49c6-4771-ad43-408bf2b66c1a%2Favatar.jpg?v=1590485011175'},
+  {name: 'Phong0908', avatarUrl: 'https://cdn.glitch.com/d408507d-49c6-4771-ad43-408bf2b66c1a%2Favatar.jpg?v=1590485011175'}
+]
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hideModal: true
-    };
-    this.showModal = this.showModal.bind(this);
-    this.hiddenModal = this.hiddenModal.bind(this); 
+      users: userList
+    }
   }
 
-  showModal() {
-    this.setState({hideModal: false});
-  }
-
-  hiddenModal() {
-    this.setState({hideModal: true});
-  }
-  render(){
+  render() {
+    const { users } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              <button onClick={this.showModal}> Open modal</button>
-            </p>
-            <a
-              className="App-link"
-              href="https://coders-x.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Yêu anh Thịnh
-            </a>
-          </header>
-        {!this.state.hideModal && <Modal hiddenModal={this.hiddenModal}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </Modal> }
+        <div className="group-title">
+          <div className="title">Gợi ý cho bạn</div>
+          <a href="/">Xem tất cả</a>
+        </div>
+        {users.length > 0 && users.map((user, index) =>
+         <FollowUserListItem key={index} user={user} /> 
+        )}
       </div>
-    );
+    )
   }
 }
 
