@@ -7,12 +7,12 @@ import './Modal.css';
 
 class Modal extends React.Component {
   render() {
-    const { content } = this.props;
+    const { children } = this.props;
     return (
       <div className={classnames('modal-background', {'hide': this.props.hide})}>
         <div className="modal">
           <div className="title">This is a modal 1</div>
-            <p>{content}</p>
+            <p>{children}</p>
           <div className="control-buttom">
             <button onClick={this.props.hiddenModal} className="btn btn-sucess">Accept</button>
             <button onClick={this.props.hiddenModal} className="btn btn-danger">Decline</button>
